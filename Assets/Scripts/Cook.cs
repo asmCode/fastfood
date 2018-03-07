@@ -1,0 +1,91 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Cook : MonoBehaviour
+{
+    private static Cook m_instance;
+
+    public Transform m_camera;
+    public Transform m_leftHand;
+    public Transform m_rightHand;
+
+    public Inventory Inventory
+    {
+        get;
+        set;
+    }
+
+    public Cook()
+    {
+        Inventory = new Inventory();
+    }
+
+    public void DropRightHand()
+    {
+        Inventory.SetRightHand(null);
+
+        if (m_rightHand.childCount == 0)
+            return;
+
+        m_rightHand.GetChild(0).SetParent(null);
+    }
+
+    public void DropLeftHand()
+    {
+
+    }
+
+    public void GrabRightHand(GameObject gameObject)
+    {
+        if (!Inventory.IsRightHandFree)
+            return;
+
+        Inventory.SetRightHand(gameObject);
+
+        gameObject.transform.SetParent(m_rightHand);
+        gameObject.transform.localPosition = Vector3.zero;
+        gameObject.transform.localRotation = Quaternion.identity;
+        gameObject.transform.localScale = Vector3.one;
+    }
+
+    public void GrabLeftHand(GameObject gameObject)
+    {
+
+    }
+
+    public static Cook Get()
+    {
+        if (m_instance == null)
+            m_instance = GameObject.Find("Cook").GetComponent<Cook>();
+
+        return m_instance;
+    }
+
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            var hits = Physics.RaycastAll(m_camera.transform.position, m_camera.transform.forward, 100.0f);
+
+            if (hits.Length > 0)
+            {
+                System.Array.Sort(hits, (a, b) => { return a.distance.CompareTo(b.distance); });
+
+                var interactiveElement = hits[0].transform.GetComponent<BaseInteractiveElement>();
+
+                if (interactiveElement != null)
+                {
+                    interactiveElement.DoAction();
+                }
+            }
+        }
+    }
+}
