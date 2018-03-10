@@ -79,11 +79,18 @@ public class Cook : MonoBehaviour
             {
                 System.Array.Sort(hits, (a, b) => { return a.distance.CompareTo(b.distance); });
 
-                var interactiveElement = hits[0].transform.GetComponent<BaseInteractiveElement>();
-
-                if (interactiveElement != null)
+                for (int i = 0; i < hits.Length; i++)
                 {
+                    var interactiveElement = hits[i].transform.GetComponent<BaseInteractiveElement>();
+
+                    if (interactiveElement == null)
+                        continue;
+
+                    if (interactiveElement.gameObject == Inventory.RightHand)
+                        break;
+
                     interactiveElement.DoAction();
+                    break;
                 }
             }
         }
