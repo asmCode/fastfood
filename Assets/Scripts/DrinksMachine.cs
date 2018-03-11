@@ -24,13 +24,15 @@ public class DrinksMachine : MonoBehaviour
     void Update()
     {
         if (m_isWorking)
+        {
             m_time += Time.deltaTime;
 
-        var cup = GetCup();
-        if (cup != null)
-        {
-            cup.SetDrinkColor(m_streamMaterial.color);
-            cup.SetLevel(Mathf.Clamp01(m_time / Duration));
+            var cup = GetCup();
+            if (cup != null)
+            {
+                cup.SetDrinkColor(m_streamMaterial.color);
+                cup.SetLevel(Mathf.Clamp01(m_time / Duration));
+            }
         }
     }
 
@@ -70,6 +72,10 @@ public class DrinksMachine : MonoBehaviour
             return;
 
         m_stream.SetActive(false);
+
+        var cup = GetCup();
+        if (cup != null)
+            cup.SetLevel(1.0f);
 
         m_isWorking = false;
     }

@@ -1447,48 +1447,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 522940305}
   m_Mesh: {fileID: 4300000, guid: 925ca43cb6d0f8748bfcaf1bf146ffb5, type: 3}
---- !u!1001 &524511195
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4434192827804220, guid: 5b954a8ab34a9ce4497fb503cb66fbec, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 4434192827804220, guid: 5b954a8ab34a9ce4497fb503cb66fbec, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4434192827804220, guid: 5b954a8ab34a9ce4497fb503cb66fbec, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.1447
-      objectReference: {fileID: 0}
-    - target: {fileID: 4434192827804220, guid: 5b954a8ab34a9ce4497fb503cb66fbec, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4434192827804220, guid: 5b954a8ab34a9ce4497fb503cb66fbec, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4434192827804220, guid: 5b954a8ab34a9ce4497fb503cb66fbec, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4434192827804220, guid: 5b954a8ab34a9ce4497fb503cb66fbec, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4434192827804220, guid: 5b954a8ab34a9ce4497fb503cb66fbec, type: 2}
-      propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 5b954a8ab34a9ce4497fb503cb66fbec, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &534589905
 GameObject:
   m_ObjectHideFlags: 0
@@ -1674,7 +1632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00eb443e6f54f9c46959f3989def8a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_spawnPrefab: {fileID: 1219580409048348, guid: 5b954a8ab34a9ce4497fb503cb66fbec,
+  m_spawnPrefab: {fileID: 1408703215036512, guid: 5b954a8ab34a9ce4497fb503cb66fbec,
     type: 2}
 --- !u!114 &551729039
 MonoBehaviour:
@@ -3548,7 +3506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00eb443e6f54f9c46959f3989def8a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_spawnPrefab: {fileID: 1240268608554612, guid: f036481c5a6ab5d48b2a3816ff60b5db,
+  m_spawnPrefab: {fileID: 1173809514400668, guid: f036481c5a6ab5d48b2a3816ff60b5db,
     type: 2}
 --- !u!65 &1284686492
 BoxCollider:

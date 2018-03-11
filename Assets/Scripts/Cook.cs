@@ -31,6 +31,16 @@ public class Cook : MonoBehaviour
         m_rightHand.GetChild(0).SetParent(null);
     }
 
+    public void DropRightHand(Transform parent)
+    {
+        Inventory.SetRightHand(null);
+
+        if (m_rightHand.childCount == 0)
+            return;
+
+        Utils.SetParentAndResetTransform(m_rightHand.GetChild(0), parent);
+    }
+
     public void DropLeftHand()
     {
 
@@ -47,6 +57,11 @@ public class Cook : MonoBehaviour
         gameObject.transform.localPosition = Vector3.zero;
         gameObject.transform.localRotation = Quaternion.identity;
         gameObject.transform.localScale = Vector3.one;
+    }
+
+    public bool IsHolding<T>()
+    {
+        return Inventory.RightHand != null && Inventory.RightHand.GetComponent<T>() != null;
     }
 
     public void GrabLeftHand(GameObject gameObject)

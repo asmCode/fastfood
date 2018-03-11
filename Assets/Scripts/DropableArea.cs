@@ -8,7 +8,7 @@ public class DropableArea : BaseInteractiveElement
     {
         var cook = Cook.Get();
 
-        if (cook.Inventory.IsRightHandFree && transform.childCount > 0)
+        if (transform.childCount > 0)
         {
             transform.GetChild(0).GetComponent<BaseInteractiveElement>().DoAction();
         }

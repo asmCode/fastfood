@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4521705470914138}
   m_Layer: 0
-  m_Name: StrowPlaceholder
+  m_Name: StrawPlaceholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 4344374839323064}
   - component: {fileID: 65467303119229322}
   - component: {fileID: 114421799374831158}
-  - component: {fileID: 114297850273210974}
+  - component: {fileID: 114345236893195108}
   m_Layer: 0
   m_Name: Cup
   m_TagString: Untagged
@@ -147,7 +147,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1903527395765918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2301, y: 0, z: 0.202}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4457978677854606}
@@ -204,13 +204,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1045042222119984}
-  m_LocalRotation: {x: 0.10839964, y: -0, z: -0, w: 0.9941074}
-  m_LocalPosition: {x: 0, y: 0.0015150458, z: -0.0192}
+  m_LocalRotation: {x: 0.076656036, y: -0.7028859, z: 0.07664423, w: 0.7029943}
+  m_LocalPosition: {x: 0.0188, y: 0.0015150458, z: -0.0002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4344374839323064}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 12.446001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 12.446001, y: -89.991005, z: 0}
 --- !u!4 &4639936061952522
 Transform:
   m_ObjectHideFlags: 1
@@ -392,7 +392,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.07189529, y: 0.08980657, z: 0.068327405}
   m_Center: {x: 0, y: 0.04396885, z: 0}
---- !u!114 &114297850273210974
+--- !u!114 &114345236893195108
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -400,9 +400,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1903527395765918}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46140050d25268b4d871df4ccaa744f0, type: 3}
+  m_Script: {fileID: 11500000, guid: d6f052bbe2cc0274dbb349b657f89c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114421799374831158}
+        m_MethodName: OnTouched
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114421799374831158
 MonoBehaviour:
   m_ObjectHideFlags: 1
