@@ -1,15 +1,22 @@
 fileFormatVersion: 2
-guid: c0e8cf2be83e1074f9e4b035bf4f6b18
-timeCreated: 1519895681
+guid: 627faca52e253084781d0b9b6490e326
+timeCreated: 1520833235
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Box001
+    100000: Body
+    100002: //RootNode
+    100004: Screen
+    400000: Body
+    400002: //RootNode
+    400004: Screen
+    2300000: Body
+    2300002: Screen
+    3300000: Body
+    3300002: Screen
+    4300000: Body
+    4300002: Screen
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -46,7 +53,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
