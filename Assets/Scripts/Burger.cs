@@ -17,7 +17,9 @@ public class Burger : MonoBehaviour
         }
         else if (IsInProgress())
         {
-            if (go.GetComponent<Beef>() != null || go.GetComponent<HalfBanTop>() != null)
+            if (go.GetComponent<Beef>() != null ||
+                go.GetComponent<HalfBanTop>() != null ||
+                go.GetComponent<Cheese>() != null)
             {
                 var bounds = Utils.GetBounds(gameObject);
                 Utils.SetParentAndResetTransform(go.transform, m_ingridientContainer);
