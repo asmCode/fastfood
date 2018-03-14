@@ -6,10 +6,59 @@ ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Box001
+    100004: Box002
+    100006: Box003
+    100008: Box004
+    100010: Box005
+    100012: Box006
+    100014: Box007
+    100016: Body
+    100018: Drawer
+    100020: Drawer001
     400000: //RootNode
+    400002: Box001
+    400004: Box002
+    400006: Box003
+    400008: Box004
+    400010: Box005
+    400012: Box006
+    400014: Box007
+    400016: Body
+    400018: Drawer
+    400020: Drawer001
     2300000: //RootNode
+    2300002: Box001
+    2300004: Box002
+    2300006: Box003
+    2300008: Box004
+    2300010: Box005
+    2300012: Box006
+    2300014: Box007
+    2300016: Body
+    2300018: Drawer
+    2300020: Drawer001
     3300000: //RootNode
+    3300002: Box001
+    3300004: Box002
+    3300006: Box003
+    3300008: Box004
+    3300010: Box005
+    3300012: Box006
+    3300014: Box007
+    3300016: Body
+    3300018: Drawer
+    3300020: Drawer001
     4300000: Box001
+    4300002: Box002
+    4300004: Box003
+    4300006: Box004
+    4300008: Box006
+    4300010: Box005
+    4300012: Box007
+    4300014: Body
+    4300016: Drawer
+    4300018: Drawer001
     9500000: //RootNode
   materials:
     importMaterials: 1

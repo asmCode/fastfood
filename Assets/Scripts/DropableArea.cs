@@ -10,7 +10,9 @@ public class DropableArea : BaseInteractiveElement
 
         if (transform.childCount > 0)
         {
-            transform.GetChild(0).GetComponent<BaseInteractiveElement>().DoAction();
+            var interactiveElement = transform.GetChild(0).GetComponent<BaseInteractiveElement>();
+            if (interactiveElement != null)
+                interactiveElement.DoAction();
         }
         else if (!cook.Inventory.IsRightHandFree && transform.childCount == 0)
         {
