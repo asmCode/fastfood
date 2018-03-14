@@ -14,7 +14,7 @@ public class BurgerAssembler : MonoBehaviour
             return;
 
         var cook = Cook.Get();
-        if (cook.Inventory.IsRightHandFree || cook.Inventory.RightHand.GetComponent<HalfBanBottom>() == null)
+        if (cook.Inventory.IsRightHandFree || cook.Inventory.RightHand.GetComponent<BurgerBox>() == null)
             return;
 
         burger = ObjectFactory.Get().CreateBurger();

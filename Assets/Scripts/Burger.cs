@@ -11,13 +11,14 @@ public class Burger : MonoBehaviour
         if (IsFinished())
             return;
 
-        if (IsEmpty() && go.GetComponent<HalfBanBottom>() != null)
+        if (IsEmpty() && go.GetComponent<BurgerBox>() != null)
         {
             Utils.SetParentAndResetTransform(go.transform, m_ingridientContainer);
         }
         else if (IsInProgress())
         {
             if (go.GetComponent<Beef>() != null ||
+                go.GetComponent<HalfBanBottom>() != null ||
                 go.GetComponent<HalfBanTop>() != null ||
                 go.GetComponent<Cheese>() != null)
             {

@@ -19,9 +19,21 @@ public class Utils
 
     private static void GetBoundsRecursively(GameObject go, ref Bounds bounds)
     {
+        var stackTop = go.GetComponent<ObjectStackTop>();
+        if (stackTop != null)
+        {
+            if (bounds.max.y < stackTop.GetWorldHeight())
+                bounds.max = new Vector3(bounds.max.x, stackTop.GetWorldHeight(), bounds.max.z);
+
+            return;
+        }
+
         var renderer = go.GetComponent<Renderer>();
         if (renderer != null)
-            bounds.Encapsulate(renderer.bounds);
+        {
+            var rendererBounds = renderer.bounds;
+            bounds.Encapsulate(rendererBounds);
+        }
 
         for (int i = 0; i < go.transform.childCount; i++)
             GetBoundsRecursively(go.transform.GetChild(i).gameObject, ref bounds);
