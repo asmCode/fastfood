@@ -1335,6 +1335,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4e4ff3a392704ca4db097c151423103a, type: 2}
+    - target: {fileID: 9500000, guid: e229e33e2c698e847ae1d3a870e39d82, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f948445320d647547b54fc3cc6e0201c, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e229e33e2c698e847ae1d3a870e39d82, type: 3}
   m_IsPrefabParent: 0
@@ -7111,7 +7115,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1419590390}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.030480009, y: 0.030480001, z: 0.020320006}
