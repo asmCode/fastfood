@@ -12,6 +12,7 @@ public class Cup : MonoBehaviour
     private Material m_drinkLevelMaterial;
 
     private float m_level;
+    private bool m_ice;
     
     private void Awake()
     {
@@ -69,6 +70,16 @@ public class Cup : MonoBehaviour
 
         m_drinkLevel.transform.localPosition = Vector3.Lerp(m_drinkLevelBottom.transform.localPosition, m_drinkLevelTop.transform.localPosition, m_level);
         m_drinkLevel.transform.localScale = Vector3.Lerp(m_drinkLevelBottom.transform.localScale, m_drinkLevelTop.transform.localScale, m_level);
+    }
+
+    public void SetIce(bool ice)
+    {
+        m_ice = ice;
+    }
+
+    public bool HasIce()
+    {
+        return m_ice;
     }
 
     private bool HasLid()

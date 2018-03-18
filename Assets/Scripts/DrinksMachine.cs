@@ -10,10 +10,11 @@ public class DrinksMachine : MonoBehaviour
     private Transform m_cupDrop;
     private bool m_isWorking;
     private float m_time;
-
+    private Animator m_animator;
   
     private void Awake()
     {
+        m_animator = GetComponent<Animator>();
         m_stream = transform.Find("DrinkStream").gameObject;
         m_cupDrop = transform.Find("CupDrop");
         m_streamMaterial = m_stream.GetComponent<Renderer>().material;
@@ -34,6 +35,27 @@ public class DrinksMachine : MonoBehaviour
                 cup.SetLevel(Mathf.Clamp01(m_time / Duration));
             }
         }
+    }
+
+    public void PushIceButton()
+    {
+        AddIce();
+    }
+
+    private void AddIce()
+    {
+        var cup = GetCup();
+        if (cup != null)
+            cup.SetIce(true);
+
+        m_animator.Play("DrinksMachineDropIce", 0, 0);
+        m_animator.speed = 1.0f;
+    }
+
+    public void AnimEvent_DrinksMachineDropIceFinished()
+    {
+        m_animator.Play("DrinksMachineDropIce", 0, 0);
+        m_animator.speed = 0.0f;
     }
 
     public void PushCokeButton()

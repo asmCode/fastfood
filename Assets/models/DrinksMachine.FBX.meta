@@ -14,6 +14,7 @@ ModelImporter:
     100012: //RootNode
     100014: DrinkStream
     100016: Tap
+    100018: IceButton
     400000: Base
     400002: Body1
     400004: Body2
@@ -23,6 +24,7 @@ ModelImporter:
     400012: //RootNode
     400014: DrinkStream
     400016: Tap
+    400018: IceButton
     2300000: Base
     2300002: Body1
     2300004: Body2
@@ -31,6 +33,7 @@ ModelImporter:
     2300010: Button3
     2300012: DrinkStream
     2300014: Tap
+    2300016: IceButton
     3300000: Base
     3300002: Body1
     3300004: Body2
@@ -39,6 +42,7 @@ ModelImporter:
     3300010: Button3
     3300012: DrinkStream
     3300014: Tap
+    3300016: IceButton
     4300000: Base
     4300002: Body1
     4300004: Body2
@@ -47,6 +51,7 @@ ModelImporter:
     4300010: Button1
     4300012: Button3
     4300014: DrinkStream
+    4300016: IceButton
     9500000: //RootNode
   materials:
     importMaterials: 1
