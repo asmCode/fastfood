@@ -2,15 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BurgerBox : MonoBehaviour {
+public class BurgerBox : MonoBehaviour
+{
+    private Animator m_animator;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private bool m_isClosed = false;
+
+    public void CloseBox()
+    {
+        m_isClosed = true;
+        m_animator.Play("BurgerBoxClose", 0, 0);
+    }
+
+    public bool IsClosed()
+    {
+        return m_isClosed;
+    }
+
+    private void Awake()
+    {
+        m_animator = GetComponent<Animator>();
+    }
 }

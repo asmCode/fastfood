@@ -11,6 +11,12 @@ public class Burger : MonoBehaviour
         if (IsFinished())
             return;
 
+        if (HasAllIngridients())
+        {
+            m_ingridientContainer.GetComponentInChildren<BurgerBox>().CloseBox();
+            return;
+        }
+
         if (IsEmpty() && go.GetComponent<BurgerBox>() != null)
         {
             Utils.SetParentAndResetTransform(go.transform, m_ingridientContainer);
@@ -31,6 +37,12 @@ public class Burger : MonoBehaviour
 
     public void OnTouched()
     {
+        if (!IsFinished() && HasAllIngridients() && !IsBoxClosed())
+        {
+            m_ingridientContainer.GetComponentInChildren<BurgerBox>().CloseBox();
+            return;
+        }
+
         var cook = Cook.Get();
 
         if (IsFinished() && cook.Inventory.IsRightHandFree)
@@ -48,6 +60,20 @@ public class Burger : MonoBehaviour
     }
 
     public bool IsFinished()
+    {
+        return HasAllIngridients() && IsBoxClosed();
+    }
+
+    public bool IsBoxClosed()
+    {
+        var burgerBox = m_ingridientContainer.GetComponentInChildren<BurgerBox>();
+        if (burgerBox == null)
+            return false;
+
+        return burgerBox.IsClosed();
+    }
+
+    public bool HasAllIngridients()
     {
         return !IsEmpty() && m_ingridientContainer.GetComponentInChildren<HalfBanTop>() != null;
     }
