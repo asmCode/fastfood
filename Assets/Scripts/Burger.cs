@@ -45,7 +45,11 @@ public class Burger : MonoBehaviour
 
         var cook = Cook.Get();
 
-        if (IsFinished() && cook.Inventory.IsRightHandFree)
+        if (IsInProgress() && cook.IsHolding<SauceBottle>())
+        {
+            Debug.Log("ssss");
+        }
+        else if (IsFinished() && cook.Inventory.IsRightHandFree)
             cook.GrabRightHand(transform.gameObject);
         else if (!cook.Inventory.IsRightHandFree)
         {
