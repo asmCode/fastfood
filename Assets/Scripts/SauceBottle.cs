@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class SauceBottle : MonoBehaviour
 {
-    // Use this for initialization
-    void Start()
-    {
+    private Animator m_animator;
 
+    void Awake()
+    {
+        m_animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SpreadSauce()
     {
-
+        m_animator.Play("SpreadSauce", 0, 0);
     }
 }

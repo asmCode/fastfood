@@ -64,6 +64,14 @@ public class Cook : MonoBehaviour
         return Inventory.RightHand != null && Inventory.RightHand.GetComponent<T>() != null;
     }
 
+    public T GetRightHand<T>() where T : Component
+    {
+        if (Inventory.RightHand == null)
+            return null;
+        
+        return Inventory.RightHand.GetComponent<T>();
+    }
+
     public void GrabLeftHand(GameObject gameObject)
     {
 

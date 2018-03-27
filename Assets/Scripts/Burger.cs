@@ -5,6 +5,7 @@ using UnityEngine;
 public class Burger : MonoBehaviour
 {
     private Transform m_ingridientContainer;
+    private Transform m_sauceBottlePlaceholder;
 
     public void AddIngridient(GameObject go)
     {
@@ -47,7 +48,9 @@ public class Burger : MonoBehaviour
 
         if (IsInProgress() && cook.IsHolding<SauceBottle>())
         {
-            Debug.Log("ssss");
+            var sauceBottle = cook.GetRightHand<SauceBottle>();
+            cook.DropRightHand(m_sauceBottlePlaceholder);
+            sauceBottle.SpreadSauce();
         }
         else if (IsFinished() && cook.Inventory.IsRightHandFree)
             cook.GrabRightHand(transform.gameObject);
@@ -90,6 +93,7 @@ public class Burger : MonoBehaviour
     void Awake()
     {
         m_ingridientContainer = transform.Find("IngridientContainer");
+        m_sauceBottlePlaceholder = transform.Find("SauceBottlePlaceholder");
     }
 
     // Update is called once per frame
