@@ -3677,34 +3677,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &621111317
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 621111318}
-  m_Layer: 0
-  m_Name: ss
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &621111318
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 621111317}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &655430013
 Transform:
   m_ObjectHideFlags: 0
@@ -4019,6 +3991,8 @@ MonoBehaviour:
   m_halfBanTopPrefab: {fileID: 114247831377244166, guid: 0de1d8eb73e01df479b5eaf9ae1e6820,
     type: 2}
   m_burgerPrefab: {fileID: 114084598968238296, guid: 593884f8e62116f418cbad7e2c44aa1c,
+    type: 2}
+  m_saucePrefab: {fileID: 114243894740050746, guid: 9807e698e8abe0a41a66fceae15a136f,
     type: 2}
 --- !u!4 &696269375
 Transform:

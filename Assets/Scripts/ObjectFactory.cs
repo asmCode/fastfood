@@ -7,6 +7,7 @@ public class ObjectFactory : MonoBehaviour
     public HalfBanBottom m_halfBanBottomPrefab;
     public HalfBanTop m_halfBanTopPrefab;
     public Burger m_burgerPrefab;
+    public Sauce m_saucePrefab;
 
     private static ObjectFactory m_instance;
 
@@ -31,6 +32,11 @@ public class ObjectFactory : MonoBehaviour
     public Burger CreateBurger()
     {
         return Instantiate(m_burgerPrefab);
+    }
+
+    public Sauce CreateSauce()
+    {
+        return Instantiate(m_saucePrefab);
     }
 }
     

@@ -27,9 +27,10 @@ public class Burger : MonoBehaviour
             if (go.GetComponent<Beef>() != null ||
                 go.GetComponent<HalfBanBottom>() != null ||
                 go.GetComponent<HalfBanTop>() != null ||
-                go.GetComponent<Cheese>() != null)
+                go.GetComponent<Cheese>() != null ||
+                go.GetComponent<Sauce>() != null)
             {
-                var bounds = Utils.GetBounds(gameObject);
+                var bounds = Utils.GetBounds(m_ingridientContainer.gameObject);
                 Utils.SetParentAndResetTransform(go.transform, m_ingridientContainer);
                 go.transform.localPosition = go.transform.localPosition + new Vector3(0, bounds.size.y, 0);
             }
@@ -50,7 +51,15 @@ public class Burger : MonoBehaviour
         {
             var sauceBottle = cook.GetRightHand<SauceBottle>();
             cook.DropRightHand(m_sauceBottlePlaceholder);
-            sauceBottle.SpreadSauce();
+            sauceBottle.SpreadSauce(() =>
+            {
+                cook.GrabRightHand(sauceBottle.gameObject);
+            });
+
+            var sauce = ObjectFactory.Get().CreateSauce();
+            sauce.PlayAppearAnimation();
+            AddIngridient(sauce.gameObject);
+
         }
         else if (IsFinished() && cook.Inventory.IsRightHandFree)
             cook.GrabRightHand(transform.gameObject);
