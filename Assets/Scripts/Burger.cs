@@ -20,7 +20,8 @@ public class Burger : MonoBehaviour
 
         if (IsEmpty() && go.GetComponent<BurgerBox>() != null)
         {
-            Utils.SetParentAndResetTransform(go.transform, m_ingridientContainer);
+            Mover.Get().Move(go.transform, m_ingridientContainer);
+            //Debug.Break();
         }
         else if (IsInProgress())
         {
@@ -31,8 +32,9 @@ public class Burger : MonoBehaviour
                 go.GetComponent<Sauce>() != null)
             {
                 var bounds = Utils.GetBounds(m_ingridientContainer.gameObject);
-                Utils.SetParentAndResetTransform(go.transform, m_ingridientContainer);
-                go.transform.localPosition = go.transform.localPosition + new Vector3(0, bounds.size.y, 0);
+                // Utils.SetParentAndResetTransform(go.transform, m_ingridientContainer);
+                Mover.Get().Move(go.transform, m_ingridientContainer, new Vector3(0, bounds.size.y, 0));
+                //go.transform.localPosition = go.transform.localPosition + );
             }
         }
     }

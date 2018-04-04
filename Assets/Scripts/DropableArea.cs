@@ -18,12 +18,7 @@ public class DropableArea : BaseInteractiveElement
         {
             var rightHandGameObject = cook.Inventory.RightHand;
 
-            cook.DropRightHand();
-
-            rightHandGameObject.transform.SetParent(transform);
-            rightHandGameObject.transform.localPosition = Vector3.zero;
-            rightHandGameObject.transform.localRotation = Quaternion.identity;
-            rightHandGameObject.transform.localScale = Vector3.one;
+            cook.DropRightHand(transform);
         }
     }
 }

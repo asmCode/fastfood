@@ -18,8 +18,8 @@ public class BurgerAssembler : MonoBehaviour
             return;
 
         burger = ObjectFactory.Get().CreateBurger();
-        burger.AddIngridient(cook.Inventory.RightHand);
         Utils.SetParentAndResetTransform(burger.transform, m_burgerPlaceholder.transform);
+        burger.AddIngridient(cook.Inventory.RightHand);
 
         cook.DropRightHand();
     }
