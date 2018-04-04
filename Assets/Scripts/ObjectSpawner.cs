@@ -12,7 +12,7 @@ public class ObjectSpawner : MonoBehaviour
         if (!cook.Inventory.IsRightHandFree)
             return;
 
-        var spawnedObject = Instantiate(m_spawnPrefab);
+        var spawnedObject = Instantiate(m_spawnPrefab, transform.position, transform.rotation);
         cook.GrabRightHand(spawnedObject);
     }
 
