@@ -59,6 +59,8 @@ public class Burger : MonoBehaviour
             });
 
             var sauce = ObjectFactory.Get().CreateSauce();
+            sauce.transform.position = transform.position;
+            sauce.transform.rotation = transform.rotation;
             sauce.PlayAppearAnimation();
             AddIngridient(sauce.gameObject);
 
