@@ -6,8 +6,7 @@ public class Move
 {
     private Vector3 m_destinationPosition;
     private Quaternion m_destinationRotation;
-    private Transform m_movingObject;
-
+  
     private float m_timeVelocity;
     private float m_time;
 
@@ -16,12 +15,19 @@ public class Move
         get;
         private set;
     }
- 
+
+    public Transform MovingObject
+    {
+        get;
+        private set;
+    }
+
+
     public Move(Vector3 destinationPosition, Quaternion destinationRotation, Transform movingObject)
     {
         m_destinationPosition = destinationPosition;
         m_destinationRotation = destinationRotation;
-        m_movingObject = movingObject;
+        MovingObject = movingObject;
     }
 
     public void Update()
@@ -33,8 +39,8 @@ public class Move
         if (Mathf.Abs(m_time - 1.0f) < 0.1f)
             m_time = 1.0f;
 
-        m_movingObject.localPosition = Vector3.Lerp(m_movingObject.localPosition, m_destinationPosition, m_time);
-        m_movingObject.localRotation = Quaternion.Slerp(m_movingObject.localRotation, m_destinationRotation, m_time);
+        MovingObject.localPosition = Vector3.Lerp(MovingObject.localPosition, m_destinationPosition, m_time);
+        MovingObject.localRotation = Quaternion.Slerp(MovingObject.localRotation, m_destinationRotation, m_time);
 
         Finished = m_time == 1.0f;
     }

@@ -240,3 +240,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1363542ab6c20489c38ebe63997b40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_bottomBan: {fileID: 4577454224253522}
+  m_topBan: {fileID: 4946972095073354}

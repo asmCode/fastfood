@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Ban : MonoBehaviour
 {
+    public Transform m_bottomBan;
+    public Transform m_topBan;
 
     // Use this for initialization
     void Start()

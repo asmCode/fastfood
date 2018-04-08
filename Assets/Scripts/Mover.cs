@@ -19,6 +19,13 @@ public class Mover : MonoBehaviour
 
     public void Move(Transform moveObject, Transform parent, Vector3 localPosition)
     {
+        var m = m_moves.Find((t) =>
+        {
+            return t.MovingObject == moveObject;
+        });
+        if (m != null)
+            m_moves.Remove(m);
+
         moveObject.SetParent(parent, true);
 
         var move = new Move(localPosition, Quaternion.identity, moveObject);

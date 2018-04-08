@@ -38,10 +38,16 @@ public class Toaster : MonoBehaviour
                     Destroy(ban.gameObject);
 
                     var banBottom = objectFactory.CreateHalfBanBottom();
-                    Utils.SetParentAndResetTransform(banBottom.transform, m_bottomBanHolder);
+                    // Utils.SetParentAndResetTransform(banBottom.transform, m_bottomBanHolder);
+                    banBottom.transform.position = ban.m_bottomBan.position;
+                    banBottom.transform.rotation = ban.m_bottomBan.rotation;
+                    Mover.Get().Move(banBottom.transform, m_bottomBanHolder);
 
                     var banTop = objectFactory.CreateHalfBanTop();
-                    Utils.SetParentAndResetTransform(banTop.transform, m_topBanHolder);
+                    // Utils.SetParentAndResetTransform(banTop.transform, m_topBanHolder);
+                    banTop.transform.position = ban.m_topBan.position;
+                    banTop.transform.rotation = ban.m_topBan.rotation;
+                    Mover.Get().Move(banTop.transform, m_topBanHolder);
                 }
             }
         }

@@ -7540,6 +7540,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1363542ab6c20489c38ebe63997b40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_bottomBan: {fileID: 0}
+  m_topBan: {fileID: 0}
 --- !u!4 &1481253562
 Transform:
   m_ObjectHideFlags: 0
