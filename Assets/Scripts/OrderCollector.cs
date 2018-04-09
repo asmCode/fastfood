@@ -5,6 +5,7 @@ using UnityEngine;
 public class OrderCollector : MonoBehaviour
 {
     private Transform m_trayPlaceholder;
+    private AnimationHelper m_trayPlaceholderAnimationHelper;
 
     public void OnTouched()
     {
@@ -20,6 +21,7 @@ public class OrderCollector : MonoBehaviour
     void Awake()
     {
         m_trayPlaceholder = transform.Find("TrayPlaceholder");
+        m_trayPlaceholderAnimationHelper = m_trayPlaceholder.GetComponent<AnimationHelper>();
     }
 
     private bool HasTray()
@@ -32,6 +34,10 @@ public class OrderCollector : MonoBehaviour
         if (!HasTray())
             return;
 
-        Destroy(m_trayPlaceholder.GetChild(0).gameObject);
+        m_trayPlaceholderAnimationHelper.Play("TrayGiveAway", () =>
+        {
+            Destroy(m_trayPlaceholder.GetChild(0).gameObject);
+        });
+
     }
 }
