@@ -46,7 +46,7 @@ public class Menu
         cokeNoIce.Remove(ProductType.Ice);
         m_drinks.Add(cokeNoIce);
 
-        var orangeJuice = new OrderElement("OrangeJuice");
+        var orangeJuice = new OrderElement("Orange Juice");
         orangeJuice.Add(ProductType.Cup);
         orangeJuice.Add(ProductType.Ice);
         orangeJuice.Add(ProductType.OrangeJuice);
