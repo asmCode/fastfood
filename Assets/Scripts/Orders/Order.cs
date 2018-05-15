@@ -5,6 +5,11 @@ public class Order
 {
     private List<OrderElement> m_orderElements = new List<OrderElement>();
 
+    public List<OrderElement> OrderElements
+    {
+        get { return m_orderElements; }
+    }
+
     public static bool Compare(Order order1, Order order2)
     {
         if (order1.m_orderElements.Count != order2.m_orderElements.Count)

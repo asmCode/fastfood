@@ -19,15 +19,15 @@ public class Menu
         return m_instance;
     }
 
-    public List<OrderElement> GetRandomOrder()
+    public Order GetRandomOrder()
     {
-        var order = new List<OrderElement>();
+        var order = new Order();
 
         var randomDrink = m_drinks[Random.Range(0, m_drinks.Count - 1)];
-        order.Add(randomDrink);
+        order.OrderElements.Add(randomDrink);
 
         var randomBurger = m_burgers[Random.Range(0, m_burgers.Count - 1)];
-        order.Add(randomBurger);
+        order.OrderElements.Add(randomBurger);
 
         return order;
     }
