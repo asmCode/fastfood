@@ -15,10 +15,10 @@ public class OrderTest
         Assert.That(Order.Compare(order1, order2));
         Assert.That(Order.Compare(order2, order1));
 
-        var orderElement1 = new OrderElement("order1");
+        var orderElement1 = new OrderElement("order1", 1.0f, 1.0f);
         order1.OrderElements.Add(orderElement1);
 
-        var orderElement2 = new OrderElement("order2");
+        var orderElement2 = new OrderElement("order2", 1.0f, 1.0f);
         order2.OrderElements.Add(orderElement2);
 
         Assert.That(Order.Compare(order1, order2));
@@ -67,9 +67,9 @@ public class OrderTest
         Order order1 = new Order();
         Order order2 = new Order();
 
-        order1.OrderElements.Add(new OrderElement("element1"));
-        order1.OrderElements.Add(new OrderElement("element2"));
-        order2.OrderElements.Add(new OrderElement("element3"));
+        order1.OrderElements.Add(new OrderElement("element1", 1.0f, 1.0f));
+        order1.OrderElements.Add(new OrderElement("element2", 1.0f, 1.0f));
+        order2.OrderElements.Add(new OrderElement("element3", 1.0f, 1.0f));
 
         Assert.That(!Order.Compare(order1, order2));
         Assert.That(!Order.Compare(order2, order1));
@@ -90,7 +90,7 @@ public class OrderTest
         Assert.That(!Order.Compare(order1, order2));
         Assert.That(!Order.Compare(order2, order1));
 
-        order2.OrderElements.Add(new OrderElement("element4"));
+        order2.OrderElements.Add(new OrderElement("element4", 1.0f, 1.0f));
         Assert.That(!Order.Compare(order1, order2));
         Assert.That(!Order.Compare(order2, order1));
 

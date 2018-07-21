@@ -3,6 +3,13 @@ using System.Collections.Generic;
 
 public class Order
 {
+    public float BasePrice { get; set; }
+    public float BaseTime { get; set; }
+
+    public Order()
+    {
+    }
+
     private List<OrderElement> m_orderElements = new List<OrderElement>();
 
     public List<OrderElement> OrderElements

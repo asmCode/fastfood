@@ -10,14 +10,28 @@ public class OrderElement : List<ProductType>
         private set;
     }
 
-    public OrderElement(string name)
+    public float Price
+    {
+        get;
+        private set;
+    }
+
+    public float Time
+    {
+        get;
+        private set;
+    }
+
+    public OrderElement(string name, float price, float time)
     {
         Name = name;
+        Price = price;
+        Time = time;
     }
 
     public OrderElement Clone()
     {
-        var clone = new OrderElement(Name);
+        var clone = new OrderElement(Name, Price, Time);
         clone.InsertRange(0, this);
         return clone;
     }

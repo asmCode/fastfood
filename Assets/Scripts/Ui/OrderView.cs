@@ -21,9 +21,11 @@ public class OrderView : MonoBehaviour
     public Color m_criticalColor;
 
     private float m_timeLimit;
+    private Order m_order;
 
-    public void SetData(int orderId, string text, float timeLimit, float reward)
+    public void SetData(Order order, int orderId, string text, float timeLimit, float reward)
     {
+        m_order = order;
         OrderId = orderId;
         m_timeLimit = timeLimit;
         m_textLabel.text = text;

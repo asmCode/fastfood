@@ -19,14 +19,16 @@ public class Menu
         return m_instance;
     }
 
+    private static System.Random random = new System.Random();
+
     public Order GetRandomOrder()
     {
         var order = new Order();
 
-        var randomDrink = m_drinks[Random.Range(0, m_drinks.Count - 1)];
+        var randomDrink = m_drinks[random.Next(0, m_drinks.Count)];
         order.OrderElements.Add(randomDrink);
 
-        var randomBurger = m_burgers[Random.Range(0, m_burgers.Count - 1)];
+        var randomBurger = m_burgers[random.Next(0, m_burgers.Count)];
         order.OrderElements.Add(randomBurger);
 
         return order;
@@ -34,7 +36,7 @@ public class Menu
 
     private void Initialize()
     {
-        var coke = new OrderElement("Coke");
+        var coke = new OrderElement("Coke", 1.49f, 10.0f);
         coke.Add(ProductType.Cup);
         coke.Add(ProductType.Ice);
         coke.Add(ProductType.Coke);
@@ -46,7 +48,7 @@ public class Menu
         cokeNoIce.Remove(ProductType.Ice);
         m_drinks.Add(cokeNoIce);
 
-        var orangeJuice = new OrderElement("Orange Juice");
+        var orangeJuice = new OrderElement("Orange Juice", 1.49f, 10.0f);
         orangeJuice.Add(ProductType.Cup);
         orangeJuice.Add(ProductType.Ice);
         orangeJuice.Add(ProductType.OrangeJuice);
@@ -59,14 +61,14 @@ public class Menu
         m_drinks.Add(orangeJuiceNoIce);
 
         // Burgers
-        var burger = new OrderElement("Burger");
+        var burger = new OrderElement("Burger", 4.99f, 20.0f);
         burger.Add(ProductType.BanBottom);
         burger.Add(ProductType.BeefFried);
         burger.Add(ProductType.Ketchup);
         burger.Add(ProductType.BanTop);
         m_burgers.Add(burger);
 
-        var cheeseburger = new OrderElement("Cheeseburger");
+        var cheeseburger = new OrderElement("Cheeseburger", 5.49f, 25.0f);
         cheeseburger.Add(ProductType.BanBottom);
         cheeseburger.Add(ProductType.BeefFried);
         cheeseburger.Add(ProductType.Cheese);
@@ -74,7 +76,7 @@ public class Menu
         cheeseburger.Add(ProductType.BanTop);
         m_burgers.Add(cheeseburger);
 
-        var doubleCheeseburger = new OrderElement("Double Cheeseburger");
+        var doubleCheeseburger = new OrderElement("Double Cheeseburger", 8.99f, 30.0f);
         doubleCheeseburger.Add(ProductType.BanBottom);
         doubleCheeseburger.Add(ProductType.BeefFried);
         doubleCheeseburger.Add(ProductType.Cheese);
