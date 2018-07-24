@@ -4,7 +4,18 @@ using UnityEngine;
 
 public class OrderManager : MonoBehaviour
 {
+    public static OrderManager m_instance;
+
     public OrderList m_orderList;
+
+    public static OrderManager Get()
+    {
+        if (m_instance == null)
+            m_instance = GameObject.Find("OrderManager").GetComponent<OrderManager>(); ;
+
+        return m_instance;
+    }
+
 
     public void MakeNewOrder()
     {
@@ -23,7 +34,8 @@ public class OrderManager : MonoBehaviour
             time += order.OrderElements[i].Time;
         }
         
-        m_orderList.AddOrder(order, Id.NextId(), text, Time.time + time, price);
+        // m_orderList.AddOrder(order, Id.NextId(), text, Time.time + time, price);
+        m_orderList.AddOrder(order, 666, text, Time.time + time, price);
     }
 
     // Use this for initialization
@@ -37,5 +49,12 @@ public class OrderManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
             MakeNewOrder();
+        if (Input.GetKeyDown(KeyCode.C))
+            m_orderList.CompleteOrder(666, true);
+    }
+
+    public bool TryComplete(Order order)
+    {
+        return false;
     }
 }

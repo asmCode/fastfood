@@ -10,6 +10,10 @@ public class OrderView : MonoBehaviour
     public Text m_rewardLabel;
     public Image m_bg;
 
+    public event System.Action<OrderView> AnimationFinished;
+
+    private Animator m_animator;
+
     public int OrderId
     {
         get;
@@ -22,6 +26,11 @@ public class OrderView : MonoBehaviour
 
     private float m_timeLimit;
     private Order m_order;
+
+    private void Awake()
+    {
+        m_animator = GetComponent<Animator>();
+    }
 
     public void SetData(Order order, int orderId, string text, float timeLimit, float reward)
     {
@@ -46,5 +55,19 @@ public class OrderView : MonoBehaviour
             m_bg.color = m_warningColor;
         else
             m_bg.color = m_normalColor;
+    }
+
+    public void Anim_Finished()
+    {
+        if (AnimationFinished != null)
+            AnimationFinished(this);
+    }
+
+    public void Complete(bool success)
+    {
+        if (success)
+            m_animator.Play("OrderViewSuccess", 0, 0.0f);
+        else
+            m_animator.Play("OrderViewFail", 0, 0.0f);
     }
 }
