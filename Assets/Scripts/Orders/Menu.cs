@@ -36,7 +36,7 @@ public class Menu
 
     private void Initialize()
     {
-        var coke = new OrderElement("Coke", 1.49f, 10.0f);
+        var coke = new OrderElement("Coke", 2.49f, 10.0f);
         coke.Add(ProductType.Cup);
         coke.Add(ProductType.Ice);
         coke.Add(ProductType.Coke);

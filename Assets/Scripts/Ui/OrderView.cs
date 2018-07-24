@@ -40,9 +40,9 @@ public class OrderView : MonoBehaviour
         else
             m_timeLabel.text = "00:00";
 
-        if (timeSpan.TotalSeconds < 20.0f)
+        if (timeSpan.TotalSeconds < 10.0f)
             m_bg.color = m_criticalColor;
-        else if (timeSpan.TotalSeconds < 40.0f)
+        else if (timeSpan.TotalSeconds < 15.0f)
             m_bg.color = m_warningColor;
         else
             m_bg.color = m_normalColor;

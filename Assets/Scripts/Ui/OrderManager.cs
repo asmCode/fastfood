@@ -19,8 +19,8 @@ public class OrderManager : MonoBehaviour
             if (i != order.OrderElements.Count - 1)
                 text += "\n";
 
-            price = order.OrderElements[i].Price;
-            time = order.OrderElements[i].Time;
+            price += order.OrderElements[i].Price;
+            time += order.OrderElements[i].Time;
         }
         
         m_orderList.AddOrder(order, Id.NextId(), text, Time.time + time, price);
