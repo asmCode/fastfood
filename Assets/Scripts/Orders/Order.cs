@@ -5,9 +5,11 @@ public class Order
 {
     public float BasePrice { get; set; }
     public float BaseTime { get; set; }
+    public int Id { get; private set; }
 
-    public Order()
+    public Order(int id)
     {
+        Id = id;
     }
 
     private List<OrderElement> m_orderElements = new List<OrderElement>();
@@ -42,7 +44,7 @@ public class Order
 
     public Order Clone()
     {
-        Order order = new Order();
+        Order order = new Order(Id);
         order.m_orderElements = new List<OrderElement>(m_orderElements);
         return order;
     }

@@ -6,11 +6,11 @@ public class OrderList : MonoBehaviour
 {
     public OrderView m_orderViewPrefab;
 
-    public void AddOrder(Order order, int orderId, string text, float timeLimit, float reward)
+    public void AddOrder(Order order, string text, float timeLimit, float reward)
     {
         var orderView = Instantiate(m_orderViewPrefab);
         orderView.transform.SetParent(this.transform, false);
-        orderView.SetData(order, orderId, text, timeLimit, reward);
+        orderView.SetData(order, text, timeLimit, reward);
         orderView.AnimationFinished += OrderView_AnimationFinished;
     }
 
@@ -20,7 +20,7 @@ public class OrderList : MonoBehaviour
         {
             var child = transform.GetChild(i);
             var orderView = child.GetComponent<OrderView>();
-            if (orderId == orderView.OrderId)
+            if (orderId == orderView.Order.Id)
             {
                 orderView.Complete(success);
                 break;

@@ -23,7 +23,7 @@ public class Menu
 
     public Order GetRandomOrder()
     {
-        var order = new Order();
+        var order = new Order(Id.NextId());
 
         var randomDrink = m_drinks[random.Next(0, m_drinks.Count)];
         order.OrderElements.Add(randomDrink);

@@ -14,7 +14,7 @@ public class OrderView : MonoBehaviour
 
     private Animator m_animator;
 
-    public int OrderId
+    public Order Order
     {
         get;
         private set;
@@ -25,17 +25,15 @@ public class OrderView : MonoBehaviour
     public Color m_criticalColor;
 
     private float m_timeLimit;
-    private Order m_order;
 
     private void Awake()
     {
         m_animator = GetComponent<Animator>();
     }
 
-    public void SetData(Order order, int orderId, string text, float timeLimit, float reward)
+    public void SetData(Order order, string text, float timeLimit, float reward)
     {
-        m_order = order;
-        OrderId = orderId;
+        Order = order;
         m_timeLimit = timeLimit;
         m_textLabel.text = text;
         m_rewardLabel.text = string.Format("${0:0.00}", reward);

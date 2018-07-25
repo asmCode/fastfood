@@ -9,8 +9,8 @@ public class OrderTest
     [Test]
     public void SingleOrder()
     {
-        Order order1 = new Order();
-        Order order2 = new Order();
+        Order order1 = new Order(0);
+        Order order2 = new Order(0);
 
         Assert.That(Order.Compare(order1, order2));
         Assert.That(Order.Compare(order2, order1));
@@ -64,8 +64,8 @@ public class OrderTest
     [Test]
     public void ElementsInOrder()
     {
-        Order order1 = new Order();
-        Order order2 = new Order();
+        Order order1 = new Order(0);
+        Order order2 = new Order(0);
 
         order1.OrderElements.Add(new OrderElement("element1", 1.0f, 1.0f));
         order1.OrderElements.Add(new OrderElement("element2", 1.0f, 1.0f));

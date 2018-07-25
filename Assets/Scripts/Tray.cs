@@ -21,4 +21,18 @@ public class Tray : MonoBehaviour
         m_burgerPlaceholder = transform.Find("BurgerPlaceholder");
         m_cupPlaceholder = transform.Find("CupPlaceholder");
     }
+
+    public Order GetOrder()
+    {
+        var element1 = m_burgerPlaceholder.GetComponentInChildren<OrderElementRoot>();
+        var element2 = m_cupPlaceholder.GetComponentInChildren<OrderElementRoot>();
+
+        var order = new Order(0);
+        if (element1 != null)
+            order.OrderElements.Add(element1.GetOrderElement());
+        if (element2 != null)
+            order.OrderElements.Add(element2.GetOrderElement());
+
+        return order;
+    }
 }

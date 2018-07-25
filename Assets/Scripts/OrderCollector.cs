@@ -34,10 +34,19 @@ public class OrderCollector : MonoBehaviour
         if (!HasTray())
             return;
 
+        var orderManager = OrderManager.Get();
+        var tray = m_trayPlaceholder.GetComponentInChildren<Tray>();
+        var orderOnTray = tray.GetOrder();
+
+        if (!orderManager.TryComplete(orderOnTray))
+        {
+            Debug.Log("No matching order found");
+            return;
+        }
+
         m_trayPlaceholderAnimationHelper.Play("TrayGiveAway", () =>
         {
             Destroy(m_trayPlaceholder.GetChild(0).gameObject);
         });
-
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,13 @@ public class Cup : MonoBehaviour
     private GameObject m_drinkLevelTop;
     private GameObject m_drinkLevelBottom;
     private Transform m_lidPlaceholder;
+
+    public OrderElement GetOrderElement()
+    {
+        var orderElement = new OrderElement("", 0, 0);
+        return orderElement;
+    }
+
     private Transform m_strawPlaceholder;
     private Material m_drinkLevelMaterial;
 

@@ -8,20 +8,21 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications: []
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 0}
+  m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1137085326157356}
-  m_IsPrefabParent: 1
+  m_IsPrefabAsset: 1
 --- !u!1 &1137085326157356
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 6
   m_Component:
   - component: {fileID: 4015712413886020}
   - component: {fileID: 114084598968238296}
   - component: {fileID: 114183197289365766}
   - component: {fileID: 65947604344674802}
+  - component: {fileID: 114530382359771790}
   m_Layer: 0
   m_Name: Burger
   m_TagString: Untagged
@@ -32,9 +33,9 @@ GameObject:
 --- !u!1 &1591706621136856
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 6
   m_Component:
   - component: {fileID: 4843264761301344}
   m_Layer: 0
@@ -47,9 +48,9 @@ GameObject:
 --- !u!1 &1829072473639584
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 6
   m_Component:
   - component: {fileID: 4958133349489310}
   m_Layer: 0
@@ -62,7 +63,7 @@ GameObject:
 --- !u!4 &4015712413886020
 Transform:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1137085326157356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -77,7 +78,7 @@ Transform:
 --- !u!4 &4843264761301344
 Transform:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1591706621136856}
   m_LocalRotation: {x: -0.00000008940697, y: -0.0000000028184477, z: -1, w: -0.000000046645294}
@@ -90,7 +91,7 @@ Transform:
 --- !u!4 &4958133349489310
 Transform:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1829072473639584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -103,7 +104,7 @@ Transform:
 --- !u!65 &65947604344674802
 BoxCollider:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1137085326157356}
   m_Material: {fileID: 0}
@@ -115,7 +116,7 @@ BoxCollider:
 --- !u!114 &114084598968238296
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1137085326157356}
   m_Enabled: 1
@@ -126,7 +127,7 @@ MonoBehaviour:
 --- !u!114 &114183197289365766
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1137085326157356}
   m_Enabled: 1
@@ -148,5 +149,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &114530382359771790
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1137085326157356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0fcf0b81e163c441b29c17a6098d657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

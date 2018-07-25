@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -37,6 +38,12 @@ public class Burger : MonoBehaviour
                 //go.transform.localPosition = go.transform.localPosition + );
             }
         }
+    }
+
+    public OrderElement GetOrderElement()
+    {
+        var orderElement = new OrderElement("", 0, 0);
+        return orderElement;
     }
 
     public void OnTouched()

@@ -8,6 +8,8 @@ public class OrderManager : MonoBehaviour
 
     public OrderList m_orderList;
 
+    private List<Order> m_orders = new List<Order>();
+
     public static OrderManager Get()
     {
         if (m_instance == null)
@@ -33,9 +35,9 @@ public class OrderManager : MonoBehaviour
             price += order.OrderElements[i].Price;
             time += order.OrderElements[i].Time;
         }
-        
-        // m_orderList.AddOrder(order, Id.NextId(), text, Time.time + time, price);
-        m_orderList.AddOrder(order, 666, text, Time.time + time, price);
+
+        m_orders.Add(order);
+        m_orderList.AddOrder(order, text, Time.time + time, price);
     }
 
     // Use this for initialization
@@ -55,6 +57,16 @@ public class OrderManager : MonoBehaviour
 
     public bool TryComplete(Order order)
     {
+        foreach (var orderOnList in m_orders)
+        {
+            if (Order.Compare(orderOnList, order))
+            {
+                m_orders.Remove(order);
+                m_orderList.CompleteOrder(orderOnList.Id, true);
+                break;
+            }
+        }
+
         return false;
     }
 }
