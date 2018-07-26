@@ -57,6 +57,7 @@ public class Menu
         m_drinks.Add(orangeJuice);
 
         var orangeJuiceNoIce = orangeJuice.Clone();
+        orangeJuiceNoIce.Name += " (No Ice)";
         orangeJuiceNoIce.Remove(ProductType.Ice);
         m_drinks.Add(orangeJuiceNoIce);
 

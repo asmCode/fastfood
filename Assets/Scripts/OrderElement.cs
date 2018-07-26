@@ -7,7 +7,7 @@ public class OrderElement : List<ProductType>
     public string Name
     {
         get;
-        private set;
+        set;
     }
 
     public float Price

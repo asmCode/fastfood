@@ -63,7 +63,7 @@ public class OrderManager : MonoBehaviour
             {
                 m_orders.Remove(order);
                 m_orderList.CompleteOrder(orderOnList.Id, true);
-                break;
+                return true;
             }
         }
 
