@@ -62,6 +62,7 @@ public class Menu
 
         // Burgers
         var burger = new OrderElement("Burger", 4.99f, 20.0f);
+        burger.Add(ProductType.BurgerBox);
         burger.Add(ProductType.BanBottom);
         burger.Add(ProductType.BeefFried);
         burger.Add(ProductType.Ketchup);
@@ -69,6 +70,7 @@ public class Menu
         m_burgers.Add(burger);
 
         var cheeseburger = new OrderElement("Cheeseburger", 5.49f, 25.0f);
+        cheeseburger.Add(ProductType.BurgerBox);
         cheeseburger.Add(ProductType.BanBottom);
         cheeseburger.Add(ProductType.BeefFried);
         cheeseburger.Add(ProductType.Cheese);
@@ -77,6 +79,7 @@ public class Menu
         m_burgers.Add(cheeseburger);
 
         var doubleCheeseburger = new OrderElement("Double Cheeseburger", 8.99f, 30.0f);
+        doubleCheeseburger.Add(ProductType.BurgerBox);
         doubleCheeseburger.Add(ProductType.BanBottom);
         doubleCheeseburger.Add(ProductType.BeefFried);
         doubleCheeseburger.Add(ProductType.Cheese);

@@ -10,9 +10,26 @@ public class Cup : MonoBehaviour
     private GameObject m_drinkLevelBottom;
     private Transform m_lidPlaceholder;
 
+    private ProductType m_productType = ProductType.None;
+
     public OrderElement GetOrderElement()
     {
         var orderElement = new OrderElement("", 0, 0);
+
+        orderElement.Add(ProductType.Cup);
+
+        if (m_productType != ProductType.None)
+            orderElement.Add(m_productType);
+
+        if (HasIce())
+            orderElement.Add(ProductType.Ice);
+
+        if (HasStraw())
+            orderElement.Add(ProductType.Straw);
+
+        if (HasLid())
+            orderElement.Add(ProductType.Lid);
+
         return orderElement;
     }
 
@@ -62,9 +79,10 @@ public class Cup : MonoBehaviour
         }
     }
 
-    public void SetDrinkColor(Color color)
+    public void SetDrinkType(ProductType productType)
     {
-        m_drinkLevelMaterial.color = color;
+        m_productType = productType;
+        m_drinkLevelMaterial.color = DrinkColor.GetDrinkColor(productType);
     }
 
     public void SetLevel(float level)

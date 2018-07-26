@@ -43,6 +43,15 @@ public class Burger : MonoBehaviour
     public OrderElement GetOrderElement()
     {
         var orderElement = new OrderElement("", 0, 0);
+
+        for (int i = 0; i < m_ingridientContainer.childCount; i++)
+        {
+            var child = m_ingridientContainer.GetChild(i);
+            var elementType = child.GetComponent<ProductTypeContainerBase>();
+            if (elementType != null)
+                orderElement.Add(elementType.GetProductType());
+        }
+
         return orderElement;
     }
 

@@ -24,38 +24,38 @@ public class OrderTest
         Assert.That(Order.Compare(order1, order2));
         Assert.That(Order.Compare(order2, order1));
 
-        // order1 = AppleJuice
+        // order1 = IceTea
         // order2 = 
-        orderElement1.Add(ProductType.AppleJuice);
+        orderElement1.Add(ProductType.IceTea);
         Assert.That(!Order.Compare(order1, order2));
 
-        // order1 = AppleJuice
+        // order1 = IceTea
         // order2 = BeefRaw
         orderElement2.Add(ProductType.BeefRaw);
         Assert.That(!Order.Compare(order1, order2));
         Assert.That(!Order.Compare(order2, order1));
 
-        // order1 = AppleJuice, BeefRaw
+        // order1 = IceTea, BeefRaw
         // order2 = BeefRaw
         orderElement1.Add(ProductType.BeefRaw);
         Assert.That(!Order.Compare(order1, order2));
         Assert.That(!Order.Compare(order2, order1));
 
-        // order1 = AppleJuice, BeefRaw
-        // order2 = BeefRaw, AppleJuice
-        orderElement2.Add(ProductType.AppleJuice);
+        // order1 = IceTea, BeefRaw
+        // order2 = BeefRaw, IceTea
+        orderElement2.Add(ProductType.IceTea);
         Assert.That(Order.Compare(order1, order2));
         Assert.That(Order.Compare(order2, order1));
 
-        // order1 = AppleJuice, BeefRaw, BeefRaw
-        // order2 = BeefRaw, AppleJuice, BeefRaw
+        // order1 = IceTea, BeefRaw, BeefRaw
+        // order2 = BeefRaw, IceTea, BeefRaw
         orderElement1.Add(ProductType.BeefRaw);
         orderElement2.Add(ProductType.BeefRaw);
         Assert.That(Order.Compare(order1, order2));
         Assert.That(Order.Compare(order2, order1));
 
-        // order1 = AppleJuice, BeefRaw, BeefRaw
-        // order2 = BeefRaw, AppleJuice, BeefRaw, BeefRaw
+        // order1 = IceTea, BeefRaw, BeefRaw
+        // order2 = BeefRaw, IceTea, BeefRaw, BeefRaw
         orderElement2.Add(ProductType.BeefRaw);
         Assert.That(!Order.Compare(order1, order2));
         Assert.That(!Order.Compare(order2, order1));
@@ -74,7 +74,7 @@ public class OrderTest
         Assert.That(!Order.Compare(order1, order2));
         Assert.That(!Order.Compare(order2, order1));
 
-        order1.OrderElements[0].Add(ProductType.AppleJuice);
+        order1.OrderElements[0].Add(ProductType.IceTea);
         order1.OrderElements[1].Add(ProductType.BeefFried);
         order1.OrderElements[1].Add(ProductType.BanBottom);
         order1.OrderElements[1].Add(ProductType.BanBottom);
@@ -94,11 +94,11 @@ public class OrderTest
         Assert.That(!Order.Compare(order1, order2));
         Assert.That(!Order.Compare(order2, order1));
 
-        order2.OrderElements[1].Add(ProductType.AppleJuice);
+        order2.OrderElements[1].Add(ProductType.IceTea);
         Assert.That(Order.Compare(order1, order2));
         Assert.That(Order.Compare(order2, order1));
 
-        order2.OrderElements[1].Add(ProductType.AppleJuice);
+        order2.OrderElements[1].Add(ProductType.IceTea);
         Assert.That(!Order.Compare(order1, order2));
         Assert.That(!Order.Compare(order2, order1));
     }

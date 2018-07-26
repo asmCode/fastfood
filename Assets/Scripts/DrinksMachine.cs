@@ -31,7 +31,6 @@ public class DrinksMachine : MonoBehaviour
             var cup = GetCup();
             if (cup != null)
             {
-                cup.SetDrinkColor(m_streamMaterial.color);
                 cup.SetLevel(Mathf.Clamp01(m_time / Duration));
             }
         }
@@ -60,17 +59,29 @@ public class DrinksMachine : MonoBehaviour
 
     public void PushCokeButton()
     {
-        StartWorking(Color.black);
+        var cup = GetCup();
+        if (cup != null)
+            cup.SetDrinkType(ProductType.Coke);
+
+        StartWorking(DrinkColor.GetDrinkColor(ProductType.Coke));
     }
 
     public void PushOrangeJiuceButton()
     {
-        StartWorking(new Color32(255, 165, 0, 1));
+        var cup = GetCup();
+        if (cup != null)
+            cup.SetDrinkType(ProductType.OrangeJuice);
+
+        StartWorking(DrinkColor.GetDrinkColor(ProductType.OrangeJuice));
     }
 
     public void PushIceTeaButton()
     {
-        StartWorking(Color.yellow);
+        var cup = GetCup();
+        if (cup != null)
+            cup.SetDrinkType(ProductType.IceTea);
+
+        StartWorking(DrinkColor.GetDrinkColor(ProductType.IceTea));
     }
 
     private void StartWorking(Color color)

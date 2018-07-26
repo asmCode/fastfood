@@ -1,5 +1,6 @@
 ﻿public enum ProductType
 {
+    None,
     BeefRaw,
     BeefFried,
     Cheese,
@@ -12,6 +13,7 @@
     Ice,
     Coke,
     OrangeJuice,
-    AppleJuice
+    IceTea,
+    BurgerBox
 }
 

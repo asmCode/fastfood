@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 114421799374831158}
   - component: {fileID: 114345236893195108}
   - component: {fileID: 114542341909123844}
+  - component: {fileID: 114201423693638160}
   m_Layer: 0
   m_Name: Cup
   m_TagString: Untagged
@@ -405,6 +406,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.07189529, y: 0.08980657, z: 0.068327405}
   m_Center: {x: 0, y: 0.04396885, z: 0}
+--- !u!114 &114201423693638160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1903527395765918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff688a7ee41bcf14b94044057bae3452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_productType: 7
 --- !u!114 &114345236893195108
 MonoBehaviour:
   m_ObjectHideFlags: 1
