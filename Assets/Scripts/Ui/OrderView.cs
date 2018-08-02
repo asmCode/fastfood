@@ -20,11 +20,22 @@ public class OrderView : MonoBehaviour
         private set;
     }
 
+    public bool IsDestroying
+    {
+        get;
+        set;
+    }
+
     public Color m_normalColor;
     public Color m_warningColor;
     public Color m_criticalColor;
 
     private float m_timeLimit;
+    public float GetTimeLeft()
+    {
+        var timeSpan = System.TimeSpan.FromSeconds(m_timeLimit - Time.time);
+        return Mathf.Max(0.0f, (float)timeSpan.TotalSeconds);
+    }
 
     private void Awake()
     {

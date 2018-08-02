@@ -33,7 +33,7 @@ public class OrderManager : MonoBehaviour
                 text += "\n";
 
             price += order.OrderElements[i].Price;
-            time += order.OrderElements[i].Time;
+            time += order.OrderElements[i].Time / 6.0f;
         }
 
         m_orders.Add(order);
@@ -53,6 +53,13 @@ public class OrderManager : MonoBehaviour
             MakeNewOrder();
         if (Input.GetKeyDown(KeyCode.C))
             m_orderList.CompleteOrder(666, true);
+
+        var delayedOrder = m_orderList.GetDelayedOrder();
+        if (delayedOrder != null)
+        {
+            m_orderList.CompleteOrder(delayedOrder.Id, false);
+            m_orders.RemoveAll(t => { return t.Id == delayedOrder.Id; });
+        }
     }
 
     public bool TryComplete(Order order)
@@ -61,6 +68,8 @@ public class OrderManager : MonoBehaviour
         {
             if (Order.Compare(orderOnList, order))
             {
+                GameState.Get().Currency += orderOnList.GetPrice();
+
                 m_orders.Remove(order);
                 m_orderList.CompleteOrder(orderOnList.Id, true);
                 return true;

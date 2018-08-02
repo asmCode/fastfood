@@ -3,13 +3,21 @@ using System.Collections.Generic;
 
 public class Order
 {
-    public float BasePrice { get; set; }
-    public float BaseTime { get; set; }
     public int Id { get; private set; }
 
     public Order(int id)
     {
         Id = id;
+    }
+
+    public float GetPrice()
+    {
+        float price = 0.0f;
+
+        for (int i = 0; i < OrderElements.Count; i++)
+            price += OrderElements[i].Price;
+
+        return price;
     }
 
     private List<OrderElement> m_orderElements = new List<OrderElement>();

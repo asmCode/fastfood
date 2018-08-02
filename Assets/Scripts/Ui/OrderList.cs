@@ -22,6 +22,7 @@ public class OrderList : MonoBehaviour
             var orderView = child.GetComponent<OrderView>();
             if (orderId == orderView.Order.Id)
             {
+                orderView.IsDestroying = true;
                 orderView.Complete(success);
                 break;
             }
@@ -39,5 +40,20 @@ public class OrderList : MonoBehaviour
         {
             //AddOrder(0, "1. HAMBURGER\n\t- NO MEAT\n2. COCA COLA\n\t- NO ICE", Time.time + 2.0f, 4.79f);
         }
+    }
+
+    public Order GetDelayedOrder()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            var child = transform.GetChild(i);
+            var orderView = child.GetComponent<OrderView>();
+            if (orderView.GetTimeLeft() == 0.0f && !orderView.IsDestroying)
+            {
+                return orderView.Order;
+            }
+        }
+
+        return null;
     }
 }
