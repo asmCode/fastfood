@@ -17,7 +17,7 @@ public class Mover : MonoBehaviour
         return m_instance;
     }
 
-    public void Move(Transform moveObject, Transform parent, Vector3 localPosition)
+    public void Move(Transform moveObject, Transform parent, Vector3 localPosition, System.Action<Move> moveCompleted = null)
     {
         var m = m_moves.Find((t) =>
         {
@@ -28,19 +28,23 @@ public class Mover : MonoBehaviour
 
         moveObject.SetParent(parent, true);
 
-        var move = new Move(localPosition, Quaternion.identity, moveObject);
+        var move = new Move(localPosition, Quaternion.identity, moveObject, moveCompleted);
         m_moves.Add(move);
     }
 
-    public void Move(Transform moveObject, Transform parent)
+    public void Move(Transform moveObject, Transform parent, System.Action<Move> moveCompleted = null)
     {
-        Move(moveObject, parent, Vector3.zero);
+        Move(moveObject, parent, Vector3.zero, moveCompleted);
     }
 
     private void Update()
     {
         foreach (var move in m_moves)
+        {
             move.Update();
+            if (move.Finished)
+                move.NotifyMoveFinished();
+        }
 
         m_moves.RemoveAll((t) =>
         {

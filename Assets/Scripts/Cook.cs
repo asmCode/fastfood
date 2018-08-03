@@ -31,14 +31,14 @@ public class Cook : MonoBehaviour
         m_rightHand.GetChild(0).SetParent(null);
     }
 
-    public void DropRightHand(Transform parent)
+    public void DropRightHand(Transform parent, System.Action<Move> moveCompleted = null)
     {
         Inventory.SetRightHand(null);
 
         if (m_rightHand.childCount == 0)
             return;
 
-        Mover.Get().Move(m_rightHand.GetChild(0), parent);
+        Mover.Get().Move(m_rightHand.GetChild(0), parent, moveCompleted);
 
         // Utils.SetParentAndResetTransform(m_rightHand.GetChild(0), parent);
     }
