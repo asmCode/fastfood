@@ -23,10 +23,7 @@ public class GarbageBin : MonoBehaviour
     {
         if (m_trash != null)
         {
-            m_dropVelocity -= 1.8f * Time.deltaTime;
             var position = m_trash.transform.position;
-            position.y += m_dropVelocity * Time.deltaTime;
-            m_trash.transform.position = position;
 
             if (position.y < m_destroyLimit.position.y)
                 Destroy(m_trash);
@@ -39,10 +36,23 @@ public class GarbageBin : MonoBehaviour
         m_closed = false;
 
         m_trashPlaceholder.rotation = Random.rotation;
-        Cook.Get().DropRightHand(m_trashPlaceholder, (move) =>
-        {
-            m_trash = move.MovingObject.gameObject;
-            m_dropVelocity = 0.0f;
-        });
+
+        var cook = Cook.Get();
+
+        var obj = cook.Inventory.RightHand;
+        if (obj == null)
+            return;
+
+        obj.transform.SetParent(null);
+        cook.Inventory.SetRightHand(null);
+
+        var dir = m_trashPlaceholder.position - obj.transform.position;
+        dir.Normalize();
+        dir.y += 1.0f;
+
+        var thrower = obj.AddComponent<Thrower>();
+        thrower.SetVelocity(dir * 1.2f);
+
+        m_trash = obj;
     }
 }
