@@ -46,6 +46,7 @@ public class Menu
 
         var cokeNoIce = coke.Clone();
         cokeNoIce.Remove(ProductType.Ice);
+        cokeNoIce.Name += " (No Ice)";
         m_drinks.Add(cokeNoIce);
 
         var orangeJuice = new OrderElement("Orange Juice", 1.49f, 20.0f);
