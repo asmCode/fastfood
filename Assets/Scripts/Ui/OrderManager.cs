@@ -33,7 +33,7 @@ public class OrderManager : MonoBehaviour
                 text += "\n";
 
             price += order.OrderElements[i].Price;
-            time += order.OrderElements[i].Time / 6.0f;
+            time += order.OrderElements[i].Time;
         }
 
         m_orders.Add(order);

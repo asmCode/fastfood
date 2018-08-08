@@ -13,13 +13,13 @@ public class OrderElement : List<ProductType>
     public float Price
     {
         get;
-        private set;
+        set;
     }
 
     public float Time
     {
         get;
-        private set;
+        set;
     }
 
     public OrderElement(string name, float price, float time)

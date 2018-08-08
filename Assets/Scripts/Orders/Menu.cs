@@ -36,7 +36,7 @@ public class Menu
 
     private void Initialize()
     {
-        var coke = new OrderElement("Coke", 2.49f, 10.0f);
+        var coke = new OrderElement("Coke", 2.49f, 20.0f);
         coke.Add(ProductType.Cup);
         coke.Add(ProductType.Ice);
         coke.Add(ProductType.Coke);
@@ -48,7 +48,7 @@ public class Menu
         cokeNoIce.Remove(ProductType.Ice);
         m_drinks.Add(cokeNoIce);
 
-        var orangeJuice = new OrderElement("Orange Juice", 1.49f, 10.0f);
+        var orangeJuice = new OrderElement("Orange Juice", 1.49f, 20.0f);
         orangeJuice.Add(ProductType.Cup);
         orangeJuice.Add(ProductType.Ice);
         orangeJuice.Add(ProductType.OrangeJuice);
@@ -57,12 +57,13 @@ public class Menu
         m_drinks.Add(orangeJuice);
 
         var orangeJuiceNoIce = orangeJuice.Clone();
+        orangeJuiceNoIce.Time -= 2.0f;
         orangeJuiceNoIce.Name += " (No Ice)";
         orangeJuiceNoIce.Remove(ProductType.Ice);
         m_drinks.Add(orangeJuiceNoIce);
 
         // Burgers
-        var burger = new OrderElement("Burger", 4.99f, 20.0f);
+        var burger = new OrderElement("Burger", 4.99f, 40.0f);
         burger.Add(ProductType.BurgerBox);
         burger.Add(ProductType.BanBottom);
         burger.Add(ProductType.BeefFried);
@@ -70,7 +71,7 @@ public class Menu
         burger.Add(ProductType.BanTop);
         m_burgers.Add(burger);
 
-        var cheeseburger = new OrderElement("Cheeseburger", 5.49f, 25.0f);
+        var cheeseburger = new OrderElement("Cheeseburger", 5.49f, 50.0f);
         cheeseburger.Add(ProductType.BurgerBox);
         cheeseburger.Add(ProductType.BanBottom);
         cheeseburger.Add(ProductType.BeefFried);
@@ -79,7 +80,7 @@ public class Menu
         cheeseburger.Add(ProductType.BanTop);
         m_burgers.Add(cheeseburger);
 
-        var doubleCheeseburger = new OrderElement("Double Cheeseburger", 8.99f, 30.0f);
+        var doubleCheeseburger = new OrderElement("Double Cheeseburger", 8.99f, 60.0f);
         doubleCheeseburger.Add(ProductType.BurgerBox);
         doubleCheeseburger.Add(ProductType.BanBottom);
         doubleCheeseburger.Add(ProductType.BeefFried);
