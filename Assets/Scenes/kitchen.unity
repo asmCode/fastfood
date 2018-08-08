@@ -521,7 +521,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 168080758}
-  - component: {fileID: 50610437}
   m_Layer: 0
   m_Name: Cup (3)
   m_TagString: Untagged
@@ -529,19 +528,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &50610437
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 65467303119229322, guid: 35fdbf7eae6b49543b1310c36f57ce21,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 50610434}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.07189529, y: 0.08980657, z: 0.068327405}
-  m_Center: {x: 0, y: 0.04396885, z: 0}
 --- !u!1 &57535107
 GameObject:
   m_ObjectHideFlags: 0
@@ -3172,8 +3158,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.10255468, y: 0.10062239, z: 0.0304164}
-  m_Center: {x: 0, y: 2.3875874e-17, z: 0.009492613}
+  m_Size: {x: 0.10255468, y: 0.10062239, z: 0.03514635}
+  m_Center: {x: 0, y: -0, z: 0.011857588}
 --- !u!114 &551729038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4659,7 +4645,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 898394712}
-  - component: {fileID: 799727696}
   m_Layer: 0
   m_Name: Cup (2)
   m_TagString: Untagged
@@ -4667,19 +4652,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &799727696
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 65467303119229322, guid: 35fdbf7eae6b49543b1310c36f57ce21,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 799727693}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.07189529, y: 0.08980657, z: 0.068327405}
-  m_Center: {x: 0, y: 0.04396885, z: 0}
 --- !u!1 &802894760
 GameObject:
   m_ObjectHideFlags: 0
@@ -6696,6 +6668,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400012, guid: e229e33e2c698e847ae1d3a870e39d82,
     type: 3}
   m_PrefabInternal: {fileID: 171706353}
+--- !u!95 &1266586429
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1266586426}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f948445320d647547b54fc3cc6e0201c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1276456666
 GameObject:
   m_ObjectHideFlags: 0
@@ -6705,7 +6695,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 655430013}
-  - component: {fileID: 1276456669}
   m_Layer: 0
   m_Name: Cup
   m_TagString: Untagged
@@ -6713,19 +6702,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &1276456669
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 65467303119229322, guid: 35fdbf7eae6b49543b1310c36f57ce21,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1276456666}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.07189529, y: 0.08980657, z: 0.068327405}
-  m_Center: {x: 0, y: 0.04396885, z: 0}
 --- !u!1 &1284686488
 GameObject:
   m_ObjectHideFlags: 0
@@ -6815,8 +6791,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.10255468, y: 0.10062239, z: 0.0304164}
-  m_Center: {x: 0, y: 2.3875874e-17, z: 0.009492613}
+  m_Size: {x: 0.07274562, y: 0.07051594, z: 0.13107239}
+  m_Center: {x: 0, y: 0, z: 0.0598206}
 --- !u!1 &1294539104
 GameObject:
   m_ObjectHideFlags: 0
@@ -10641,8 +10617,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.10255468, y: 0.10062239, z: 0.0304164}
-  m_Center: {x: 0, y: 2.3875874e-17, z: 0.009492613}
+  m_Size: {x: 0.10255468, y: 0.10062239, z: 0.12068413}
+  m_Center: {x: 0, y: -0, z: 0.054626476}
 --- !u!1 &1935222977
 GameObject:
   m_ObjectHideFlags: 0
@@ -10652,7 +10628,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1741031491}
-  - component: {fileID: 1935222980}
   m_Layer: 0
   m_Name: Cup (1)
   m_TagString: Untagged
@@ -10660,19 +10635,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &1935222980
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 65467303119229322, guid: 35fdbf7eae6b49543b1310c36f57ce21,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1935222977}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.07189529, y: 0.08980657, z: 0.068327405}
-  m_Center: {x: 0, y: 0.04396885, z: 0}
 --- !u!1 &1942174493
 GameObject:
   m_ObjectHideFlags: 0
@@ -12334,7 +12296,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2061688219}
-  - component: {fileID: 2125632111}
   m_Layer: 0
   m_Name: Cup (4)
   m_TagString: Untagged
@@ -12342,19 +12303,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &2125632111
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 65467303119229322, guid: 35fdbf7eae6b49543b1310c36f57ce21,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2125632108}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.07189529, y: 0.08980657, z: 0.068327405}
-  m_Center: {x: 0, y: 0.04396885, z: 0}
 --- !u!1 &2127685694
 GameObject:
   m_ObjectHideFlags: 0
@@ -12394,7 +12342,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 195303214}
-  - component: {fileID: 2135703205}
   m_Layer: 0
   m_Name: Cup
   m_TagString: Untagged
@@ -12402,16 +12349,3 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &2135703205
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 65467303119229322, guid: 35fdbf7eae6b49543b1310c36f57ce21,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2135703202}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.07189529, y: 0.08980657, z: 0.068327405}
-  m_Center: {x: 0, y: 0.04396885, z: 0}

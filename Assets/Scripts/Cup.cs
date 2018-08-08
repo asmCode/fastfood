@@ -53,7 +53,7 @@ public class Cup : MonoBehaviour
 
     public void OnTouched()
     {
-        if (IsReady())
+        if (IsReady() || !IsInDrinkMachine())
         {
             Cook.Get().GrabRightHand(gameObject);
             return;
@@ -77,6 +77,11 @@ public class Cup : MonoBehaviour
 
             return;
         }
+    }
+
+    public bool IsInDrinkMachine()
+    {
+        return transform.parent != null && transform.parent.name == "CupDrop";
     }
 
     public void SetDrinkType(ProductType productType)

@@ -9,11 +9,17 @@ public class Tray : MonoBehaviour
 
     public void OnTouched()
     {
-        if (Cook.Get().IsHolding<Burger>())
-            Cook.Get().DropRightHand(m_burgerPlaceholder);
+        if (Cook.Get().Inventory.IsRightHandFree)
+        {
+        }
+        else
+        {
+            if (Cook.Get().IsHolding<Burger>() && GetBurger() == null)
+                Cook.Get().DropRightHand(m_burgerPlaceholder);
 
-        if (Cook.Get().IsHolding<Cup>())
-            Cook.Get().DropRightHand(m_cupPlaceholder);
+            if (Cook.Get().IsHolding<Cup>() && GetCup() == null)
+                Cook.Get().DropRightHand(m_cupPlaceholder);
+        }
     }
 
     void Awake()
@@ -34,5 +40,21 @@ public class Tray : MonoBehaviour
             order.OrderElements.Add(element2.GetOrderElement());
 
         return order;
+    }
+
+    public GameObject GetCup()
+    {
+        if (m_cupPlaceholder.childCount == 0)
+            return null;
+
+        return m_cupPlaceholder.GetChild(0).gameObject;
+    }
+
+    public GameObject GetBurger()
+    {
+        if (m_burgerPlaceholder.childCount == 0)
+            return null;
+
+        return m_burgerPlaceholder.GetChild(0).gameObject;
     }
 }
